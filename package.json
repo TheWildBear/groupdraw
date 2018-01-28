@@ -1,0 +1,17 @@
+{
+  "name": "groupdraw",
+  "version": "1.0.0",
+  "description": "a groupdraw application",
+  "main": "groupdraw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "a",
+    "group",
+    "drawer"
+  ],
+  "author": "Thewildbear",
+  "license": "MIT",
+  "dependencies": {}
+}
