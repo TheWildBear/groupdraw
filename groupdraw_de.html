@@ -1,6 +1,7 @@
 <head>
 	<title>Groupdrawhtmlsite</title>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script>
 		var pupils = [];
 		var groupsize = 4;
@@ -48,15 +49,15 @@
 				}else{
 					if(i<pupils.length&&i<end)
 					{
-					output = output + "<br>=============<br>Gruppe " + group  + "<br>";
-					counter=1;
-					group++;
+						output = output + "<br>=============<br>Gruppe " + group  + "<br>";
+						counter=1;
+						group++;
 					}
 				}
 			}
-		
+
 			var div = document.getElementById('output');
-			div.innerHTML = output;	
+			div.innerHTML = output;
 			return;
 		}
 		function startAll(){
@@ -68,59 +69,73 @@
 		}
 	</script>
 	<style media="screen and (min-device-width: 600px)">
-		body {
-			background-color: #e6ffe6;
-		}
-		.header {
-			float: middle;
-			width: 100%;
-		}
-		.header:after {
-			clear: both;
-		}
-		.groupsize {
-			float: left;
-			width: 50%;
-		}
-		.output {
-			float: right;
-			width: 50%;
-		}
-	</style>
+	body {
+		background-color: #050505;
+		color:white;
+		font-family: 'Roboto', sans-serif;
+	}
+	.header {
+		float: middle;
+		width: 100%;
+	}
+	.header:after {
+		clear: both;
+	}
+	.groupsize {
+		float: left;
+		width: 50%;
+	}
+	.output {
+		float: right;
+		width: 50%;
+	}
+	a {
+		color: aquamarine;
+	}
+	textarea{
+		background-color: #080808;
+		color: white;
+	}
+	button {
+		background-color: aquamarine;
+		color: black;
+		border-radius: 10px;
+		padding: 10;
+		border-width: 0;
+	}
+</style>
 </head>
 <body>
 	<div class="header">
 		<h1>
-			<u>Ein Gruppenzufallsgenerator von <a href=https://github.com/TheWildBear">thewildbear</a></u>
+			<u>Ein Gruppenzufallsgenerator von <a href="https://github.com/TheWildBear">thewildbear</a></u>
 		</h1>
 		<h2>
 			<ul>
 				<li>Personen einfügen</li>
 				<li>Mischen klicken</li>
-				<li>fertig</li>
-			<ul>
-		</h2>
-	</div>
-	<hr>
-	<div id="groupsizediv" class="groupsize">
-		Gruppengröße:
-		<div class="slidercontainer">
-			<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
-		</div>
-		<div id="show_groupsize">
-			4
-		</div>
-		<br>
-		<textarea id="input" cols="40" rows="30">
-Füg hier die Personen ein.
-		</textarea>
-		<br>
-		<button onclick="startAll()">
-			Mischen	
-		</button>
-	</div>
-	<p id="output" class="output">
-	</p>
-</body>
+				<li>Fertig.</li>
+				<ul>
+				</h2>
+			</div>
+			<hr>
+			<div id="groupsizediv" class="groupsize">
+				Gruppengröße:
+				<div class="slidercontainer">
+					<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
+				</div>
+				<div id="show_groupsize">
+					4
+				</div>
+				<br>
+				<textarea id="input" cols="40" rows="30">Füg hier die Personen ein.</textarea>
+				<br>
+				<button onclick="startAll()">
+					Mischen
+				</button>
+			</div>
+			<p id="output" class="output">
+			</p>
+		</body>
 
 
