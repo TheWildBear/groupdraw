@@ -1,7 +1,6 @@
 <head>
 	<title>Groupdrawhtmlsite</title>
 	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script>
 		var pupils = [];
 		var groupsize = 4;
@@ -70,9 +69,8 @@
 	</script>
 	<style media="screen and (min-device-width: 600px)">
 	body {
-		background-color: #050505;
-		color:white;
-		font-family: 'Roboto', sans-serif;
+		background-color: aquamarine;
+		color: black;
 	}
 	.header {
 		float: middle;
@@ -90,14 +88,9 @@
 		width: 50%;
 	}
 	a {
-		color: aquamarine;
-	}
-	textarea{
-		background-color: #080808;
-		color: white;
+		color: black;
 	}
 	button {
-		background-color: aquamarine;
 		color: black;
 		border-radius: 10px;
 		padding: 10;
@@ -115,27 +108,27 @@
 				<li>Personen einfügen</li>
 				<li>Mischen klicken</li>
 				<li>Fertig.</li>
-				<ul>
-				</h2>
-			</div>
-			<hr>
-			<div id="groupsizediv" class="groupsize">
-				Gruppengröße:
-				<div class="slidercontainer">
-					<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
-				</div>
-				<div id="show_groupsize">
-					4
-				</div>
-				<br>
-				<textarea id="input" cols="40" rows="30">Füg hier die Personen ein.</textarea>
-				<br>
-				<button onclick="startAll()">
-					Mischen
-				</button>
-			</div>
-			<p id="output" class="output">
-			</p>
-		</body>
+			<ul>
+		</h2>
+	</div>
+	<hr>
+	<div id="groupsizediv" class="groupsize">
+		Gruppengröße:
+		<div class="slidercontainer">
+			<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
+		</div>
+		<div id="show_groupsize">
+			4
+		</div>
+		<br>
+		<textarea id="input" cols="40" rows="30">Füg hier die Personen ein.</textarea>
+		<br>
+		<button onclick="startAll()">
+			Mischen
+		</button>
+	</div>
+	<p id="output" class="output">
+	</p>
+</body>
 
 
