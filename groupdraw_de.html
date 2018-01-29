@@ -37,18 +37,21 @@
 
 		function shuffleEmaround(){
 			pupils = shuffle(pupils);
-			var output = "=============<br>Gruppe 0<br>";
-			var counter = 0;
-			var group = 1;
+			var output = "=============<br>Gruppe 1<br>";
+			var counter = 1;
+			var group = 2;
 			for(i = 0; i<pupils.length; i++){
-				if(counter < groupsize)
-				{
-					output = output + pupils[i] + "<br>";
+				var end = pupils.length - 1;
+				output = output + pupils[i] + "<br>";
+				if(counter < groupsize){
 					counter++;
 				}else{
-					output = output + "<br>=============<br>Gruppe " + group  + "<br>" + pupils[i] + "<br>";
-					counter=0;
+					if(i<pupils.length&&i<end)
+					{
+					output = output + "<br>=============<br>Gruppe " + group  + "<br>";
+					counter=1;
 					group++;
+					}
 				}
 			}
 		
@@ -64,17 +67,42 @@
 			}, 500);
 		}
 	</script>
+	<style media="screen and (min-device-width: 600px)">
+		body {
+			background-color: #e6ffe6;
+		}
+		.header {
+			float: middle;
+			width: 100%;
+		}
+		.header:after {
+			clear: both;
+		}
+		.groupsize {
+			float: left;
+			width: 50%;
+		}
+		.output {
+			float: right;
+			width: 50%;
+		}
+	</style>
 </head>
 <body>
-	<h1>
-		Ein Gruppenzufallsgenerator von Thewildbear
-	</h1>
-	<h2>
-		-Personen einfügen<br>
-		-mischen klicken<br>
-		-fertig<br>
-	</h2>
-	<div id="groupsizediv">
+	<div class="header">
+		<h1>
+			<u>Ein Gruppenzufallsgenerator von <a href=https://github.com/TheWildBear">thewildbear</a></u>
+		</h1>
+		<h2>
+			<ul>
+				<li>Personen einfügen</li>
+				<li>Mischen klicken</li>
+				<li>fertig</li>
+			<ul>
+		</h2>
+	</div>
+	<hr>
+	<div id="groupsizediv" class="groupsize">
 		Gruppengröße:
 		<div class="slidercontainer">
 			<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
@@ -82,16 +110,16 @@
 		<div id="show_groupsize">
 			4
 		</div>
-	</div>
-	<br>
-	<textarea id="input" cols="50" rows="30">
+		<br>
+		<textarea id="input" cols="40" rows="30">
 Füg hier die Personen ein.
-	</textarea>
-	<br>
-	<button onclick="startAll()">
-		Mischen	
-	</button>
-	<p id="output">
+		</textarea>
+		<br>
+		<button onclick="startAll()">
+			Mischen	
+		</button>
+	</div>
+	<p id="output" class="output">
 	</p>
 </body>
 
