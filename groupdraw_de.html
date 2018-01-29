@@ -3,7 +3,8 @@
 	<meta charset="utf-8">
 	<script>
 		var pupils = [];
-		var groupsize = 5;
+		var groupsize = 4;
+		document.getElementById('groupsize');
 		var counter = 0;
 		function start()
 		{
@@ -29,16 +30,18 @@
 
 		function shuffleEmaround(){
 			pupils = shuffle(pupils);
-			var output = "=============<br>group 0<br>";
+			var output = "=============<br>Gruppe 0<br>";
 			var counter = 0;
 			var group = 1;
+			//var groupsizehtml = document.getElementById('input');
+			//groupsize = textArea.value;
 			for(i = 0; i<pupils.length; i++){
 				if(counter < groupsize)
 				{
 					output = output + pupils[i] + "<br>";
 					counter++;
 				}else{
-					output = output + "<br>=============<br>group " + group  + "<br>" + pupils[i] + "<br>";
+					output = output + "<br>=============<br>Gruppe " + group  + "<br>" + pupils[i] + "<br>";
 					counter=0;
 					group++;
 				}
@@ -60,17 +63,26 @@
 </head>
 <body>
 	<h1>
-		A Group Draw Website by Thewildbear
+		Ein Gruppenzufallsgenerator von Thewildbear
 	</h1>
 	<h2>
-		Insert the pupils down in the Textarea line by line and then click Shuffle down below.
+		-Personen einfügen<br>
+		-mischen klicken<br>
+		-fertig<br>
 	</h2>
+	Gruppengröße:
+	1-10
+	<br>	
+	<textarea id="groupsize">
+4
+	</textarea>
+	<br>
 	<textarea id="input" cols="50" rows="30">
-	Enter the list of peoples into here line by line.
+Personen einfügen
 	</textarea>
 	<br>
 	<button onclick="startAll()">
-		Shuffle
+		Mischen	
 	</button>
 	<p id="output">
 	</p>
