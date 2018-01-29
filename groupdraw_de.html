@@ -4,8 +4,15 @@
 	<script>
 		var pupils = [];
 		var groupsize = 4;
-		document.getElementById('groupsize');
 		var counter = 0;
+		function updategroupsize(size)
+		{
+			groupsize = size;
+			var showgroupsize = document.getElementById('show_groupsize');
+			showgroupsize.innerHTML = size;
+			return groupsize;
+		}
+
 		function start()
 		{
 			var textArea = document.getElementById('input');
@@ -33,8 +40,6 @@
 			var output = "=============<br>Gruppe 0<br>";
 			var counter = 0;
 			var group = 1;
-			//var groupsizehtml = document.getElementById('input');
-			//groupsize = textArea.value;
 			for(i = 0; i<pupils.length; i++){
 				if(counter < groupsize)
 				{
@@ -49,14 +54,13 @@
 		
 			var div = document.getElementById('output');
 			div.innerHTML = output;	
-			console.log(output);
 			return;
 		}
 		function startAll(){
 			start();
 			setTimeout(function () {
 				shuffleEmaround();
-				console.log("saved output to output.txt");
+				window.scrollBy(0,10000);
 			}, 500);
 		}
 	</script>
@@ -70,12 +74,15 @@
 		-mischen klicken<br>
 		-fertig<br>
 	</h2>
-	Gruppengröße:
-	1-10
-	<br>	
-	<textarea id="groupsize">
-4
-	</textarea>
+	<div id="groupsizediv">
+		Gruppengröße:
+		<div class="slidercontainer">
+			<input type="range" min="1" max="10" value="4" class="slider" id="selected_groupsize" onchange="updategroupsize(this.value)">
+		</div>
+		<div id="show_groupsize">
+			4
+		</div>
+	</div>
 	<br>
 	<textarea id="input" cols="50" rows="30">
 Füg hier die Personen ein.
@@ -87,4 +94,5 @@ Füg hier die Personen ein.
 	<p id="output">
 	</p>
 </body>
+
 
