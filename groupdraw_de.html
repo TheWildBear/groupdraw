@@ -10,6 +10,7 @@
 			groupsize = size;
 			var showgroupsize = document.getElementById('show_groupsize');
 			showgroupsize.innerHTML = size;
+			console.log(groupsize);
 			return groupsize;
 		}
 
@@ -54,16 +55,15 @@
 					}
 				}
 			}
-
 			var div = document.getElementById('output');
 			div.innerHTML = output;
+			console.log(output);
 			return;
 		}
 		function startAll(){
 			start();
 			setTimeout(function () {
 				shuffleEmaround();
-				window.scrollBy(0,10000);
 			}, 500);
 		}
 	</script>
@@ -107,7 +107,7 @@
 			<ul>
 				<li>Personen einfügen</li>
 				<li>Mischen klicken</li>
-				<li>Fertig.</li>
+				<li>Fertig</li>
 			<ul>
 		</h2>
 	</div>
@@ -129,6 +129,6 @@
 	</div>
 	<p id="output" class="output">
 	</p>
+	
 </body>
-
 
