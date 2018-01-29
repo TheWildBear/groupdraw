@@ -1,0 +1,75 @@
+<head>
+	<title>Groupdrawhtmlsite</title>
+	<meta charset="utf-8">
+	<script>
+		var pupils = [];
+		var groupsize = 5;
+		var counter = 0;
+		function start()
+		{
+			var textArea = document.getElementById('input');
+			pupils = textArea.value.split('\n');
+		}
+
+		function shuffle(pupilarrayinput) {
+			var ctr = pupilarrayinput.length, temp, index;
+			// While there are elements in the array
+			while (ctr > 0) {
+				// Pick a random index
+				index = Math.floor(Math.random() * ctr);
+				// Decrease ctr by 1
+				ctr--;
+				// And swap the last element with it
+				temp = pupilarrayinput[ctr];
+				pupilarrayinput[ctr] = pupilarrayinput[index];
+				pupilarrayinput[index] = temp;
+			}
+			return pupilarrayinput;
+		}
+
+		function shuffleEmaround(){
+			pupils = shuffle(pupils);
+			var output = "=============<br>group 0<br>";
+			var counter = 0;
+			var group = 1;
+			for(i = 0; i<pupils.length; i++){
+				if(counter < groupsize)
+				{
+					output = output + pupils[i] + "<br>";
+					counter++;
+				}else{
+					output = output + "<br>=============<br>group " + group  + "<br>" + pupils[i] + "<br>";
+					counter=0;
+					group++;
+				}
+			}
+		
+			var div = document.getElementById('output');
+			div.innerHTML = output;	
+			console.log(output);
+			return;
+		}
+		function startAll(){
+			start();
+			setTimeout(function () {
+				shuffleEmaround();
+				console.log("saved output to output.txt");
+			}, 2000);
+		}
+	</script>
+</head>
+<body>
+	<h1>
+		Group Draw
+	</h1>
+	<textarea id="input" cols="50" rows="36">
+	Enter the list of peoples into here line by line.
+	</textarea>
+	<br>
+	<button onclick="startAll()">
+		Convert
+	</button>
+	<p id="output">
+	</p>
+</body>
+
